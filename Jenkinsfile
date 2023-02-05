@@ -4,6 +4,11 @@ pipeline {
         maven 'maven'
     }
     stages {
+        stage('Echo') {
+            steps {
+                echo 'This code is working'
+            }
+        }
         stage('build') {
             steps {
                 sh 'mvn --version'
