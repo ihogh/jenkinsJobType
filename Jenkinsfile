@@ -4,7 +4,10 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
+                sh 'mvn clean'
                 sh 'mvn compile'
+                sh 'mvn test'
+                sh 'mvn package'
             }            
         }
         stage('sys check') {
